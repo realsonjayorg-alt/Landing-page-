@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Claim Your $750 DoorDash Gift Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: #ff3008;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .topbar span { color: #ffe066; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d0a00 60%, #ff3008 100%);
+      text-align: center;
+      padding: 48px 20px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=60') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+
+    .badge {
+      display: inline-block;
+      background: #ffe066;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 6vw, 44px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .hero h1 .highlight { color: #ff3008; background: #fff; padding: 0 8px; border-radius: 4px; }
+
+    .hero p.sub {
+      color: #ddd;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    /* ── HERO CTA ── */
+    .hero-cta {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 32px rgba(34,197,94,0.5);
+      animation: heroPulse 1.8s ease-in-out infinite;
+    }
+    .hero-cta:hover { transform: translateY(-2px); }
+    @keyframes heroPulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(34,197,94,0.5); }
+      50% { box-shadow: 0 8px 52px rgba(34,197,94,0.75); }
+    }
+    .hero-cta-sub {
+      color: #bbb;
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-cta-sub span { color: #86efac; font-weight: 700; }
+
+    /* ── COUNTDOWN ── */
+    .countdown-wrap {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,224,102,0.3);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 28px auto 0;
+      max-width: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .countdown-label { color: #aaa; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .countdown-timer { color: #ffe066; font-size: 22px; font-weight: 900; font-variant-numeric: tabular-nums; }
+
+    /* ── SOCIAL PROOF ── */
+    .social-proof {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+    }
+    .proof-icon { font-size: 18px; }
+
+    /* ── MAIN SECTION ── */
+    .main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .step-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .step-header .step-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ff3008;
+      margin-bottom: 8px;
+    }
+    .step-header h2 {
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      background: #e8e8e8;
+      border-radius: 99px;
+      height: 8px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #ff3008, #ff6b3d);
+      border-radius: 99px;
+      transition: width 0.6s ease;
+    }
+
+    /* Question card */
+    .question-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .question-card h3 {
+      font-size: clamp(17px, 3.5vw, 22px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+    }
+
+    .btn-answer {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .btn-answer:hover, .btn-answer.selected {
+      border-color: #ff3008;
+      background: #fff5f3;
+      color: #ff3008;
+      transform: translateY(-1px);
+    }
+    .btn-answer:last-child { margin-bottom: 0; }
+
+    /* CTA button */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(135deg, #ff3008, #ff6b3d);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 30px rgba(255,48,8,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: ctaPulse 2s ease-in-out infinite;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(255,48,8,0.5);
+    }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 8px 30px rgba(255,48,8,0.4); }
+      50% { box-shadow: 0 8px 50px rgba(255,48,8,0.65); }
+    }
+    .cta-sub {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 10px;
+    }
+    .cta-sub span { color: #22a722; font-weight: 700; }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .how h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: #ff3008;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .step-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .step-text p { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 480px) { .testimonials { grid-template-columns: 1fr; } }
+    .testi-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    }
+    .stars { color: #f5a623; font-size: 13px; margin-bottom: 8px; }
+    .testi-card p { font-size: 13px; color: #444; line-height: 1.55; margin-bottom: 10px; }
+    .testi-name { font-size: 12px; font-weight: 700; color: #888; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11px;
+      color: #aaa;
+      line-height: 1.7;
+      border-top: 1px solid #eee;
+    }
+    footer a { color: #bbb; text-decoration: underline; }
+
+    /* Hidden steps */
+    .step-screen { display: none; }
+    .step-screen.active { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  🎉 <span>LIMITED TIME:</span> $750 DoorDash Gift Cards Available in Your Area — Claim Yours Now!
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">✅ Available Now</div>
+    <h1>Get <span class="highlight">$750</span> Added<br>To Your DoorDash Account</h1>
+    <p class="sub">Shop, Play &amp; Earn Rewards — It's 100% Free to Claim</p>
+    <a href="https://playabledownload.com/1899784" class="hero-cta" target="_blank">
+      🎁 CLAIM YOUR FREE $750 GIFT CARD
+    </a>
+    <p class="hero-cta-sub"><span>✅ 100% Free</span> · No Credit Card · Limited Cards Left</p>
+    <div class="countdown-wrap">
+      <div>
+        <div class="countdown-label">Offer Expires In</div>
+        <div class="countdown-timer" id="timer">09:59</div>
+      </div>
+      <div style="color:#555; font-size:28px;">|</div>
+      <div>
+        <div class="countdown-label">Cards Remaining</div>
+        <div class="countdown-timer" id="remaining">47</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="social-proof">
+  <div class="proof-item"><span class="proof-icon">👥</span> 12,847 claimed today</div>
+  <div class="proof-item"><span class="proof-icon">⭐</span> 4.8/5 Rating</div>
+  <div class="proof-item"><span class="proof-icon">🔒</span> 100% Free & Secure</div>
+</div>
+
+<!-- MAIN QUIZ + CTA -->
+<div class="main">
+
+  <!-- STEP 1 -->
+  <div class="step-screen active" id="screen-1">
+    <div class="step-header">
+      <div class="step-label">Step 1 of 3 — Quick Survey</div>
+      <h2>Answer 3 Short Questions to Unlock Your Gift Card</h2>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:10%"></div></div>
+    <div class="question-card">
+      <h3>🍔 Do you order takeout or food delivery often?</h3>
+      <button class="btn-answer" onclick="nextStep(2)">Yes, all the time!</button>
+      <button class="btn-answer" onclick="nextStep(2)">Sometimes</button>
+      <button class="btn-answer" onclick="nextStep(2)">Not really, but I'd love free food 😄</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-screen" id="screen-2">
+    <div class="step-header">
+      <div class="step-label">Step 2 of 3 — Almost There!</div>
+      <h2>One More Question...</h2>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:55%"></div></div>
+    <div class="question-card">
+      <h3>🛵 Have you used DoorDash or a similar app before?</h3>
+      <button class="btn-answer" onclick="nextStep(3)">Yes, I use it regularly</button>
+      <button class="btn-answer" onclick="nextStep(3)">I've tried it once or twice</button>
+      <button class="btn-answer" onclick="nextStep(3)">Never, but I want to try!</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-screen" id="screen-3">
+    <div class="step-header">
+      <div class="step-label">Step 3 of 3 — Final Step!</div>
+      <h2>You're Almost Done 🎉</h2>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:85%"></div></div>
+    <div class="question-card">
+      <h3>🏠 Which best describes where you live?</h3>
+      <button class="btn-answer" onclick="nextStep(4)">City / Urban Area</button>
+      <button class="btn-answer" onclick="nextStep(4)">Suburban Area</button>
+      <button class="btn-answer" onclick="nextStep(4)">Rural / Small Town</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: CTA -->
+  <div class="step-screen" id="screen-4">
+    <div class="step-header">
+      <div class="step-label">🎊 Congratulations!</div>
+      <h2>Your $750 DoorDash Gift Card is Reserved!</h2>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="question-card" style="background: linear-gradient(135deg, #fff5f3, #fff);">
+      <div style="font-size: 48px; margin-bottom: 12px;">🎁</div>
+      <h3 style="color: #ff3008; font-size: 26px; margin-bottom: 8px;">$750 Gift Card</h3>
+      <p style="color: #555; font-size: 14px; margin-bottom: 24px; line-height: 1.6;">
+        Your reward is waiting! Click below to complete your claim. Takes less than 2 minutes.
+      </p>
+      <a href="https://playabledownload.com/1899784" class="cta-btn" target="_blank">
+        🎉 CLAIM MY FREE $750 GIFT CARD
+      </a>
+      <p class="cta-sub"><span>✅ Free to claim</span> · No credit card required · Limited cards available</p>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h4>Answer 3 Simple Questions</h4>
+        <p>Quick survey to verify your eligibility. Takes under 60 seconds.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h4>Complete Your Profile</h4>
+        <p>Enter basic details so we know where to send your reward.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h4>Receive Your $750 Gift Card</h4>
+        <p>Your DoorDash balance is loaded. Order your favorite food for free!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"I was skeptical at first but it actually worked. Got my gift card in 2 days!"</p>
+      <div class="testi-name">— Jessica M., Florida</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Super easy process. Took me 3 minutes total. Highly recommend!"</p>
+      <div class="testi-name">— Marcus T., Texas</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★☆</div>
+      <p>"Free food for a whole month basically. This is amazing, thank you!"</p>
+      <div class="testi-name">— Priya K., California</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Did the survey, got the reward. Simple as that. Already ordered twice!"</p>
+      <div class="testi-name">— Ryan S., New York</div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <a href="https://playabledownload.com/1899784" class="cta-btn" target="_blank" style="margin-bottom: 8px;">
+    🎁 CLAIM YOUR FREE $750 DOORDASH GIFT CARD
+  </a>
+  <p class="cta-sub"><span>✅ 100% Free</span> · Secure · Limited Time Offer</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>This offer is available for a limited time only. By participating, you agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+  <p style="margin-top:6px;">This site is not affiliated with, sponsored by, or endorsed by DoorDash. All trademarks belong to their respective owners.</p>
+  <p style="margin-top:6px;">© 2026 RewardsClaim.net · All Rights Reserved</p>
+</footer>
+
+<script>
+  // ── STEP NAVIGATION ──
+  function nextStep(step) {
+    document.querySelectorAll('.step-screen').forEach(el => el.classList.remove('active'));
+    document.getElementById('screen-' + step).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── COUNTDOWN TIMER ──
+  let seconds = 9 * 60 + 59;
+  const timerEl = document.getElementById('timer');
+  setInterval(() => {
+    if (seconds <= 0) { seconds = 9 * 60 + 59; }
+    seconds--;
+    const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const s = String(seconds % 60).padStart(2, '0');
+    timerEl.textContent = m + ':' + s;
+  }, 1000);
+
+  // ── FAKE REMAINING CARDS (scarcity) ──
+  let remaining = 47;
+  const remEl = document.getElementById('remaining');
+  setInterval(() => {
+    if (Math.random() < 0.3 && remaining > 5) {
+      remaining--;
+      remEl.textContent = remaining;
+    }
+  }, 8000);
+</script>
+</body>
+</html>
